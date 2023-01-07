@@ -7,8 +7,16 @@
     "test": "jest",
     "build": "parcel build index.html"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavigithub/React-Assignment-Proj.git"
+  },
   "author": "Kavita Ghatge",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kavigithub/React-Assignment-Proj.git/issues"
+  },
+  "homepage": "https://github.com/kavigithub/React-Assignment-Proj.git#readme",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
