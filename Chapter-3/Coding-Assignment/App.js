@@ -46,6 +46,18 @@ function NestedHeader() {
     )
 };
 
+///create element JSX
+const header1 = (
+   <h1>Heading 1</h1>
+);
+
+//create functional component
+const Header1 = () => {
+    return (
+        <h1> Heading 1 from functional component</h1>
+    )
+}
+
 ///////////////////////////////////////////////////
 //search bar functional comp
 const SearchBar = () => (
@@ -65,6 +77,10 @@ const HedaderComp = () => {
                     </div>
                     <div className='user'>User</div>
                 </div>
+                <section>
+                    {header1}
+                    <Header1/>
+                </section>
             </header>
     )
 }

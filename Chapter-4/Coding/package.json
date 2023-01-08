@@ -1,0 +1,19 @@
+{
+  "name": "coding",
+  "version": "1.0.0",
+  "description": "coding assignment 4",
+  "main": "index.js",
+  "scripts": {
+    "test": "'jest'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavigithub/React-Assignment-Proj.git"
+  },
+  "author": "Kavit Ghatge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kavigithub/React-Assignment-Proj/issues"
+  },
+  "homepage": "https://github.com/kavigithub/React-Assignment-Proj#readme"
+}
