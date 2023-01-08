@@ -47,7 +47,7 @@ function NestedHeader() {
 };
 
 ///////////////////////////////////////////////////
-
+//search bar functional comp
 const SearchBar = () => (
     <form id="form"> 
         <input type="search" id="query" name="q" placeholder="Search..." />
