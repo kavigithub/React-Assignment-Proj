@@ -17,7 +17,7 @@ Eg
 <TitleComponent/>}
 ```
 
-**# How can I write comments in JSX?**
+# How can I write comments in JSX?
 // for single line … shortcut on windows ..(ctrl + /);
 {/* commented code*/} …for  multiple lines.... shortcut on windows (Shift + Alt + A)
 
