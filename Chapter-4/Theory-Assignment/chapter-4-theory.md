@@ -84,6 +84,7 @@ We use props in React to pass data from one component to another (from a parent 
 props allow us reuse a component's logic dynamically. This means that the data in the component will not be static. So for every other component using that logic, its data can be modified to fit the requirements.
 
  eg. This is without destructuring
+```python
  const TestOne = (props) => { <!-- {name, tool} with destructuring-->
     const name = props.name;  // const myPropName = props.name
     const age = props.age;
@@ -93,6 +94,7 @@ props allow us reuse a component's logic dynamically. This means that the data i
         </div>
     )
  } 
+```
 
 <!-- Note that the variable name is not the prop itself. If I had created a variable this way – const myPropName = props.name – and used the variable in my template like this: <h1>My name is {myPropName}.</h1>, then the code would still work perfectly if I were to do this: <TestOne name="Ihechikara" age="66"/>. The name attribute is derived from props.name and not from the variable name containing the prop.
 Refernce Link : https://www.freecodecamp.org/news/how-to-use-props-in-react/
