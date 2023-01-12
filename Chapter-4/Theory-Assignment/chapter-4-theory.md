@@ -9,19 +9,23 @@ ANS :
 {<TitleComponent/>}…with the help of this code we can call react functional component.
 {<TitleComponent> <TitleComponent/>}…you can return number of children list in it or call nested functional component...with the help of this syntax we can write multiple line code in it…
 Eg
+```python
 {<TitleComponent> 
 <Header />
  <Body />
  <Footer/>
 <TitleComponent/>}
+```
 
 **# How can I write comments in JSX?**
 // for single line … shortcut on windows ..(ctrl + /);
 {/* commented code*/} …for  multiple lines.... shortcut on windows (Shift + Alt + A)
-What is <React.Fragment></React.Fragment> and <></> ?
+
+# What is <React.Fragment></React.Fragment> and <></> ?
 Its component exported by React. If you don’t want to created extra div inspite of your root parent or any other new div or tag then you can used <React.Fragment>. This will can only ONE PARENT. This will work as empty tag
 Eg 
- const testFrag = () => {
+ ```python
+const testFrag = () => {
   return (
     <React.Fragment key=’test1’>
     <h1>Heading 1</h1>
@@ -29,10 +33,12 @@ Eg
     </React.Fragment>
   )
  }
+```
 
 Or you can work like this… but in the below syntax you can’t pass attribute…like className or style but you can add key attribute for both eg
 
- const testFrag = () => {
+ ```python
+const testFrag = () => {
   return (
     < key=’emptyTest’>
     <h1>Heading 1</h1>
@@ -40,16 +46,16 @@ Or you can work like this… but in the below syntax you can’t pass attribute�
     </>
   )
  }
+```
 
-
-
-In your browser if you check code this will look like this
-```javascript
+In your browser if you check code this will look like this in console
+```htm
 <div id=”root”>
   <h1>Heading 1</h1>
   <h2>Heading 2</h2>	
 </div>
 ```
+
 
  
 # What is Virtual DOM?
@@ -94,17 +100,18 @@ props allow us reuse a component's logic dynamically. This means that the data i
         </div>
     )
  } 
-```
 
-<!-- Note that the variable name is not the prop itself. If I had created a variable this way – const myPropName = props.name – and used the variable in my template like this: <h1>My name is {myPropName}.</h1>, then the code would still work perfectly if I were to do this: <TestOne name="Ihechikara" age="66"/>. The name attribute is derived from props.name and not from the variable name containing the prop.
-Refernce Link : https://www.freecodecamp.org/news/how-to-use-props-in-react/
- -->
-
- const App() {
+const App() {
   return (
     <TestOne name='Zitopia' age='23'/>
   )
  }
+
+```
+
+** Note that the variable name is not the prop itself. If I had created a variable this way – const myPropName = props.name – and used the variable in my template like this: <h1>My name is {myPropName}.</h1>, then the code would still work perfectly if I were to do this: <TestOne name="Ihechikara" age="66"/>. The name attribute is derived from props.name and not from the variable name containing the prop.
+Refernce Link : https://www.freecodecamp.org/news/how-to-use-props-in-react/
+**
 
  # What is a Config Driven UI ?
 
