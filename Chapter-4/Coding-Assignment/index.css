@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+body{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin:0;
+}
+
+.headerContent{
+    background-color: #2b5510;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.5rem;
+}
+
+.nav-bar{
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-bar > ul {
+    margin:0;
+    padding:0;
+    display:flex;
+}
+
+.nav-bar > ul > li{
+    list-style-type: none;
+    padding: 0px 0.5rem;
+    color:#fff;
+}
+
+.card{
+    border-color: #d3d5df;
+    box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
+    padding: 20px 20px;
+    border: 1px solid #fff;
+    contain: content;
+    width:20%;
+    margin:10px;
+    border:1px solid #d3d5df;
+    transition: transform 0.2s; /* Animation */
+}
+
+.card:hover{
+    transform: scale(1.01)
+}
+
+.card h4{
+   text-overflow: ellipsis; /* enables ellipsis */
+   white-space: nowrap; /* keeps the text in a single line */
+   overflow: hidden; /* keeps the element from overflowing its parent */
+}
+
+.card img{
+    width:100%;
+    border:2px solid #eaeaea;
+}
+
+.card h4, .card h6{
+    padding:5px 0px;
+    margin:0;
+}
+
+section {
+    padding: 10px;
+}
+
+.card-list{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.d-flex-space-between{
+    display: flex;
+    justify-content: space-between;
+}
