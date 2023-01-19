@@ -1,5 +1,5 @@
 # Is JSX mandatory for React?
-Ans : No, it’s not mandatory. But it will definitely make developer life easy. With the help of JSX developer can make user friendly code.
+Ans : No, it’s not mandatory but its good practice and recommended by react. But it will definitely make developer life easy. With the help of JSX developer can make user friendly code.
 
 # Is ES6 mandatory for React?
 ANS : No, but is highly recommendable, with the help of ES6 we can write complex code in readable and more meaning format.
@@ -24,6 +24,9 @@ Eg
 Tip: Instead of manually typing the comment, you can use Cmd + / (Mac) or Ctrl + / shortcut keys to add or remove the comment.
 
 # What is <React.Fragment></React.Fragment> and <></> ?
+Ans:
+Fragments let you group things without leaving any trace in the browser HTML tree.
+
 Its a component exported by React. Fragments let you group a list of children without adding extra nodes to the DOM. If you don’t want to created extra div inspite of your root parent or any other new div or tag then you can used <React.Fragment>. This will can only ONE PARENT. This will work as empty tag
 Eg 
  ```python

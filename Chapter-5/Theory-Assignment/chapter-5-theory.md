@@ -30,6 +30,56 @@ ANS:
 The React useState Hook allows us to track state in a function component. State generally refers to data or properties that need to be tracking in an application.
 The useState Hook can be used to keep track of strings, numbers, booleans, arrays, objects, and any combination of these!
 
+Let's take an example, suppose we want to create a counter button that increments itself by one.
+
+Without useState
+
+In the below code if one tries to increment the counter by clicking on the button the count will not change because the react rendered the component only once and since there is no state change it won't get re-rendered, the count will remain at 0 on-screen.
+By console.log one can see that the count is incrementing on click.
+```python
+import React from "react";
+
+export default function MyComponent() {
+  let count = 0;
+  const setCount = () => {
+  count++;
+  console.log(count);
+   }
+  return (
+    <div>
+      <label>{count}</label>
+      <hr/>
+      <label>Counter</label>
+      <button onClick = {setCount}>{count}</button>
+    </div>
+  );
+}
+```
+
+With useState
+
+In the below code if one tries to increment the counter by clicking on the button the count will change because the react rendered the component once when it got mounted and since there is state change it will get re-rendered, the count will get incremented on-screen.
+```python
+import React, { useState } from "react";
+
+export default function MyComponent() {
+const[count, setCount] = useState(0);
+
+return (
+    <div>
+      <label>{count}</label>
+      <hr/>
+      <label>Counter</label>
+      <button onClick = {() => {
+        setCount(count + 1);
+      }}>{count}</button>
+    </div>
+  );
+}
+```
+
+One can always directly manipulate the DOM and increment the counter on-screen as well, but then there is no point in using react.
+
 # RefLinks
 https://reactjs.org/docs/hooks-state.html
 https://www.w3schools.com/react/react_usestate.asp#:~:text=The%20useState%20Hook%20can%20be,Hooks%20to%20track%20individual%20values.

@@ -1,5 +1,11 @@
 # What is JSX?
+ React components use a syntax extension called JSX to represent that markup. JSX looks a lot like HTML, but it is a bit stricter and can display dynamic information.
 Is like HTML syntax but not exact HTML. Tag syntax is neither a string nor HTML. It’s syntax extension which has the full power of JavaScript. 
+
+Each React component is a JavaScript function that may contain some markup that React renders into the browser. React components use a syntax extension called JSX to represent that markup. JSX looks a lot like HTML, but it is a bit stricter and can display dynamic information. The best way to understand this is to convert some HTML markup to JSX markup.
+
+ JSX is a syntax extension, while React is a JavaScript library.
+
 Superpower of JSX
 ```python
 const element = <h1>Hello, world!</h1>; 
