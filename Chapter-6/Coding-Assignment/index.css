@@ -124,27 +124,28 @@ section {
     -webkit-animation-timing-function: linear;
     }
   
-  
-  .shine-div {
-    display: inline-flex;
-    flex-direction: column; 
-    margin-left: 25px;
-    margin-top: 15px;
-    vertical-align: top; 
-  }
-  
-  .shine-lines {
-    height: 10px;
-    margin-top: 10px;
-    width: 100%; 
-  }
-  
-  .shine-photo {
-    display: block!important;
-    width: 325px; 
-    height: 100px; 
-    margin-top: 15px;
-  }
+    .shine-div {
+      display: inline-flex;
+      flex-direction: column; 
+      margin-left: 25px;
+      margin-top: 15px;
+      vertical-align: top; 
+      width: 250px;
+      padding:0px 10px;
+    }
+    
+    .shine-lines {
+      height: 10px;
+      margin-top: 10px;
+      width: 100%; 
+    }
+    
+    .shine-photo {
+      display: block!important;
+      width: 250px;
+      height: 100px; 
+      margin-top: 15px;
+    }
   
   @-webkit-keyframes placeholderShimmer {
     0% {

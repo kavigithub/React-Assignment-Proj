@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { restaurentData } from '../constants';
 import RestaurentCard from './RestaurentCard';
 import {FoodItemSkeleton} from './FoodItemSkeleton';
+import { Link } from 'react-router-dom';
 
 function filterData(searcInputText, restaurentData) {
     const dataFilter = restaurentData.filter((item) => {
@@ -43,7 +44,7 @@ const Body = () => {
     //when restaurent data is not available...not render component ...Early return
     if(!allRestaurent) return null;
 
-    return (allRestaurent.length === 0) ? <FoodItemSkeleton /> : (
+    return (allRestaurent.length === 0) ? <FoodItemSkeleton/> : (
         <>
         <div className='search-container'>
             <input type="text" className='search-input' placeholder='Search' value={searcInputText} onChange={ (e) => {
@@ -61,9 +62,10 @@ const Body = () => {
         </div>
         <section className="card-list">
             {
-                (filterRestaurentList.length === 0) ? <h1 style={{paddingLeft:'20px'}}>No Restaurent match your Filter Criteria</h1> :
+                (filterRestaurentList.length === 0) ? <h1 style={{paddingLeft:'20px'}}>
+                No Restaurent match your Filter Criteria</h1> :
                 filterRestaurentList.map((restaurant) => {
-                  return <RestaurentCard {...restaurant.data} key={restaurant.data.id}/>
+                  return <Link style={{width:'25%', textDecoration: 'none'}} to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}> <RestaurentCard {...restaurant.data} /></Link> 
                 }) 
             }
         </section>

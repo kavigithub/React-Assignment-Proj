@@ -1,4 +1,5 @@
-const ShimmerEffect = () => {
+export const FoodItemSkeleton = () => {
+    //this is the shimmer effect
     return(
         <>
             {
@@ -16,5 +17,3 @@ const ShimmerEffect = () => {
         
     )
 };
-
-export default ShimmerEffect;
