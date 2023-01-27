@@ -337,10 +337,10 @@ section {
   border:2px solid #fff;
 }
 
-.product-short-details-top h1{
+.product-short-details-top h2{
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 32px;
+  font-size: 28px;
   margin: 10px 0;
 }
 
@@ -407,4 +407,56 @@ section {
 .product-menu-items ul li{
   list-style:none;
   padding:5px 10px;
+}
+
+ul.restaurent-item-info{
+  display:flex;
+  flex-direction:column;
+  width:95%;
+}
+
+ul.restaurent-item-info li {
+  border-bottom: 1px solid #164601;
+}
+
+ul.restaurent-item-info li section {
+  display:flex;
+  justify-content:space-between;
+}
+
+ul.restaurent-item-info li section h4{
+  color: #164601;
+}
+ul.restaurent-item-info li section .item-cost{
+  color:#50524e;
+  font-size:14px;
+}
+
+ul.restaurent-item-info li section .food-img{
+  margin:0 10px;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+}
+
+ul.restaurent-item-info li section .food-img img{
+  border:2px solid #e0e0e0;
+  width:130px;
+  height:130px;
+}
+
+.addBtn{
+  margin:10px 0;
+  color:#fff;
+  background-color:#2b5510;
+  border:none;
+  padding:5px;
+  display:flex;
+  justify-content:space-around;
+  font-size:14px;
+  align-items:center;
+}
+
+.active-category{
+  border-bottom:2px solid #51970b;
 }

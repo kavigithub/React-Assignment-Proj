@@ -159,6 +159,7 @@ return (
 You can read it as “if isPacked is true, then (?) render name + ' ✔', otherwise (:) render name”.
 
 **Logical AND operator (&&)**
+
 Another common shortcut you’ll encounter is the JavaScript logical AND (&&) operator. Inside React components, it often comes up when you want to render some JSX when the condition is true, or render nothing otherwise. With &&, you could conditionally render the checkmark only if isPacked is true:
 
 with above coding eg you can also jot down like this in Item function
@@ -175,11 +176,13 @@ ref link: https://beta.reactjs.org/learn/conditional-rendering
 
 
 ## 9. What is CORS?
+
 Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a server to indicate any origins (domain, scheme, or port) other than its own from which a browser should permit loading resources. CORS also relies on a mechanism by which browsers make a "preflight" request to the server hosting the cross-origin resource, in order to check that the server will permit the actual request. In that preflight, the browser sends headers that indicate the HTTP method and headers that will be used in the actual request.
 
 ref link: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 
 ## 10. What is async and await?
+
 Async/await are keywords to make a normal function behave like a asynchornous funtion.
 
 async function always returns a promise, any values are automatically wrapped inside a resolved promise.

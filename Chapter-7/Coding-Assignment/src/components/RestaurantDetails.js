@@ -1,35 +1,58 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {IMG_CDN_URL} from "../constants"
+import {IMG_CDN_URL, THUM_IMG_CDN} from "../constants"
 import { FoodItemSkeleton } from "./FoodItemSkeleton";
+import Counter from "./Counter";
+  
+
+function getUniqueCategory(objVal) {
+    if(objVal){
+        return [...new Set(Object.values(objVal?.menu?.items).map((item) => item.category))];
+     }
+}
+
+function filterMenuItem(item, menuFoodList){
+    let filterItem = menuFoodList.filter((filterI) => {
+        return filterI.category === item
+    })  
+    return filterItem;
+}
 
 const RestaurantDetails = () => {
     //How to read dynamic URL params
-    const param = useParams();
-    const { id } = param;
-    console.log(param, id);
+    //const param = useParams();
+    const { id } = useParams();
+    //console.log( restId);
     //to render api data into component and show on the page
     const [restaurantData, setRestaurantData] = useState(null);
+    const [filterItemsCategoty, setFilterItemsCategoty] = useState(getUniqueCategory(restaurantData));
+    let [activeTab, setActiveTab] = useState(null);
+    const [menuFoodRender, setMenuFoodRender] = useState([]);
+
+   /* console.log(getUniqueCategory(restaurantData));
+   console.log(restaurantData); */
+
+   console.log(useState());
 
     //to get the api data
     useEffect(()=> {
+        console.log(restaurantData);
+        console.log(filterItemsCategoty)
         getRestaurantInfo();
+        if(restaurantData) {
+          setFilterItemsCategoty(getUniqueCategory(restaurantData));
+        } 
     }, []);
+   console.log(filterItemsCategoty);
+   console.log(restaurantData);
 
     async function getRestaurantInfo() {
-        const data = await fetch('https://www.swiggy.com/dapi/menu/v4/full?lat=19.060655&lng=72.851833&menuId='+ id);
+        const data = await fetch('https://www.swiggy.com/dapi/menu/v4/full?lat=19.19414704388351&lng=72.98747308552267&menuId='+id);
         const getJson = await data.json();
-        console.log(getJson)
+        //console.log(getJson)
         setRestaurantData(getJson.data);
+        setMenuFoodRender(Object.values(getJson?.data?.menu?.items));
     }
-
- /*    let uniqueList = restaurantData.map((item) => {
-        console.log(item)
-    });
-
-    console.log(uniqueList);
- */
-    //console.log(uniqueList);
 
    /*  if(!restaurantData) {
         return <FoodItemSkeleton />
@@ -38,6 +61,7 @@ const RestaurantDetails = () => {
    
     return (!restaurantData) ? <FoodItemSkeleton /> : (
         <>
+            <Counter></Counter>
             <div>
                <section className="product-short-details-top">
                     <article>
@@ -46,7 +70,7 @@ const RestaurantDetails = () => {
                         </figure>
                     </article>
                     <article>
-                        <h1 style={{textTransform:"uppercase"}}>{restaurantData.name}</h1>
+                        <h2 style={{textTransform:"uppercase"}}>{restaurantData.name}</h2>
                         <h3>{restaurantData.cuisines.join(', ')}</h3>    
                         <p>{restaurantData?.city}, {restaurantData?.area}, {restaurantData?.locality}</p>   
 
@@ -68,22 +92,57 @@ const RestaurantDetails = () => {
                </section>
                 <hr />
                 <section className="product-menu-items">
-                    <h2>Menu item</h2>
-                    <div>
-                        Categories
-                        {Object.values(restaurantData?.menu?.items).map((item) => {
-                            <div key={item.id}>item.category</div>
-                        })}
-                    </div>
-                    <ul>
-                        {Object.values(restaurantData?.menu?.items).map((item) => (
+                    <h4 style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start'}}>Menu item  : 
+                         <span style={{marginLeft:'5px'}}>{menuFoodRender.length} Items</span>
+                        {/*  setMenuFoodRender(Object.values(restaurantData?.menu?.items)) */}
+                    </h4>
+                    <hr />
+                    <h3>Category</h3>
+                    <ul className="restoCategory">
+                        {
+                            getUniqueCategory(restaurantData).map((item, index) => (
+                                    <li id={index? 'tab'+index : 'tab'+index} key={index} className={activeTab === item ? 'active-category' : ''}  onClick={(e) => {
+                                        console.log(e.currentTarget); 
+                                        let newTestData = filterMenuItem(item, Object.values(restaurantData?.menu?.items))
+                                        console.log(newTestData, 'newtestdata')
+                                        setMenuFoodRender(newTestData)
+                                        setActiveTab(item)
+                                        }}> {item} </li>
+                                ))  
+                        }
+                    </ul>
+                    <hr />
+                    <ul className="restaurent-item-info">
+                    <span>{
+                       /*  
+                       setFilterItemsCategoty(item)
+                                        setActiveTab(activeTab = !activeTab)
+                       Object.values(restaurantData?.menu?.items).filter((fItem) => (
+                            filterItemsCategoty === fItem.category
+                        )) */
+                         console.log('restinfo', filterItemsCategoty)
+                        }
+                        </span>
+                        {menuFoodRender.map((item) => (
                           <li key={item.id}>
-                            <div>
-                                <h6>{item.name}</h6>
-                                <p>{item.attributes.vegClassifier}</p>
-                                <img style={{width:'100px'}} src={IMG_CDN_URL + item.cloudinaryImageId}/>
-                                <p>{item.price}</p>
-                            </div>
+                            <section>
+                                <article className="food-info">
+                                <h4>{item.name}</h4>
+                                {<p className="item-cost">{(item?.price > 0) ?
+                  new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR'}).format(item?.price/100 ): " " } </p> }
+                                <small className="item-desc">{item?.description}</small>
+                                {/* <p>{item.price}</p>*/}
+                                </article>
+                                
+                                <figure className="food-img">
+                                    <img src={ THUM_IMG_CDN  + item?.cloudinaryImageId } alt={item?.name}/>
+                                    <div className="addBtn">
+                                        <span style={{fontSize:'x-large'}}>+</span>
+                                        <span>ADD</span>
+                                        <span style={{fontSize:'xx-large'}}>-</span>
+                                    </div>
+                                </figure>    
+                            </section>
                           </li>
                         ))}
                     </ul>
