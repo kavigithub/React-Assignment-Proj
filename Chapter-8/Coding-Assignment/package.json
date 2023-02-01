@@ -1,0 +1,29 @@
+{
+  "name": "8",
+  "version": "1.0.0",
+  "description": "chapter 8 let's get classy",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavigithub/React-Assignment-Proj.git"
+  },
+  "author": "Kavita Ghatge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kavigithub/React-Assignment-Proj/issues"
+  },
+  "homepage": "https://github.com/kavigithub/React-Assignment-Proj#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  }
+}

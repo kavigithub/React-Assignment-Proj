@@ -71,14 +71,14 @@ function MyComponent() {
      return <ul>{varName.map(item => <li key={item}>{item}</li>)}</ul>
 }
 
-# what is SPA?
+# 4) what is SPA?
 Ans : SPA(Single page Application). In simple word we can say we don't want to load anthing from server. React is great for single page applications because it allows developers to create applications that are mobile first and responsive. React allows developers to create applications that are fast and easy to update, which is great for mobile applications.
 
 An SPA (Single-page application) is a web app implementation that loads only a single web document, and then updates the body content of that single document via JavaScript APIs such as XMLHttpRequest and Fetch when different content is to be shown.
 
 This therefore allows users to use websites without loading whole new pages from the server, which can result in performance gains and a more dynamic experience, with some tradeoff disadvantages such as SEO, more effort required to maintain state, implement navigation, and do meaningful performance monitoring.
 
-# What is the difference between Client Side Routing and Server Side Routing?
+# 5) What is the difference between Client Side Routing and Server Side Routing?
 Ans:
 ## What is Routing?
 Routing is the mechanism by which requests are connected to some code. It is essentially the way you navigate through a website or web-application. By clicking on a link, the URL changes which provides the user with some new data or a new webpage.
