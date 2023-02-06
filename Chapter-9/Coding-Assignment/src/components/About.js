@@ -51,7 +51,6 @@ class About extends React.Component{
     
                 <ProfileClass name={'KavitaClassy'} xyz="abc"/>
                 <ProfileFunction name={"Kavita"} />
-                
             </>
         )
     }

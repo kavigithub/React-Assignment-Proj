@@ -143,7 +143,6 @@ const App() {
  }
 
 ```
-
 Note that the variable name is not the prop itself. If I had created a variable this way – const myPropName = props.name – and used the variable in my template like this
 ```python
 <h1>My name is {myPropName}.</h1>

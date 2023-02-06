@@ -4,7 +4,7 @@ You have to import
 ```python
 import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom'; //library for Router
 
-createBrowserRouter([{in Obj define path & childern} in array list of path])
+createBrowserRouter([{in Obj define path, element & childern} in array list of path])
 const appRouter = createBrowserRouter([ //will help you to create browser route configration...[] in it
   {
     path: '/',
@@ -56,6 +56,7 @@ ANS. Reading Pending.....
 
 # 3. What is the order of life cycle method calls in Class Based Components
 ANS. 
+Ref.Link: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.The three phases are: Mounting, Updating, and Unmounting.
 
 A component "mounts" when it renders for the first time. Mounting means putting elements into the DOM.
@@ -85,15 +86,17 @@ componentWillUnmount() method is called when the component is removed from the D
 For example, in Repo class, during componentDidMount() a timer is set with an interval of every one second to print in console. When the component is unmounted (users moves to a different page), the timer will be running in the background, which we might not even realise and causing huge performance issue. To avoid such situations the cleanup function can be done in componentWillUnmount, in this example clearInterval(timer) to clear the timer interval before unmounting Repo component.
 
 # 6. (Research) Why do we use super(props) in constructor?
+ANS.
 super() is used inside constructor of a class to derive the parent's all properties inside the class that extended it. If super() is not used, then Reference Error : Must call super constructor in derived classes before accessing 'this' or returning from derived constructor is thrown in the console.
 
 A component that extends React.Component must call the super() constructor in the derived class since it’s required to access this context inside the derived class constructor.
 
-When you try to use props passed on parent to child component in child component using this.props.name, it will still work without super(props). Only super() is also enought for accessing props in render method.
+When you try to use props passed on parent to child component in child component using this.props.name, it will still work without super(props). Only super() is also enough for accessing props in render method.
 
 The main difference between super() and super(props) is the this.props is undefined in child's constructor in super() but this.props contains the passed props if super(props) is used.
 
 # 7. (Research) Why can't we have the callback function of useEffect async?
+ANS.
 useEffect expects it's callback function to return nothing or return a function (cleanup function that is called when the component is unmounted). If we make the callback function as async, it will return a promise which is not expected. Using an async function here will cause a bug as the cleanup function will never get called.
 
 Solution to this is not making the callback function async but created another async function inside callback function of useEffect()
