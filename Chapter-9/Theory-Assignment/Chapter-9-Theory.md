@@ -59,3 +59,6 @@ Code-Splitting is a feature supported by bundlers like Webpack, Rollup, and Brow
 # 5. When do we and why do we need suspense?
 And. React Suspense is a react component that lets components “wait” for something before rendering. React Suspense only supports one use case which is loading components dynamically with React lazy(). 
 
+Ref Links Provided By Akshay
+https://reactjs.org/docs/hooks-custom.html
+https://beta.reactjs.org/apis/react/lazy#suspense-for-code-splitting
