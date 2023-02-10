@@ -21,14 +21,14 @@ A component created using React lazy() is loaded only when it needs to be render
 React Suspense component lets us show a loading indicator as a fallback prop while we’re waiting for the lazy component to load.
 
 ```python
-import React, { Suspense } from 'react';
+import React, {lazy, Suspense } from 'react';
  
 const OtherComponent = React.lazy(() => import('./OtherComponent'));
  
 function MyComponent() {
   return (
     <div>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading...YOu can call Shimmer Component</div>}>
         <OtherComponent />
       </Suspense>
     </div>
@@ -59,6 +59,7 @@ Code-Splitting is a feature supported by bundlers like Webpack, Rollup, and Brow
 # 5. When do we and why do we need suspense?
 And. React Suspense is a react component that lets components “wait” for something before rendering. React Suspense only supports one use case which is loading components dynamically with React lazy(). 
 
-Ref Links Provided By Akshay
+## Ref Links Provided By Akshay
 https://reactjs.org/docs/hooks-custom.html
 https://beta.reactjs.org/apis/react/lazy#suspense-for-code-splitting
+https://beta.reactjs.org/reference/react/startTransition
