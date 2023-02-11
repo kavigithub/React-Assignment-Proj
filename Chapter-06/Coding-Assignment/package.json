@@ -1,0 +1,28 @@
+{
+  "name": "chapter-06",
+  "version": "1.0.0",
+  "description": "chapter-06-exploring-the-world",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavigithub/React-Assignment-Proj.git"
+  },
+  "author": "Kavita Ghatge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kavigithub/React-Assignment-Proj/issues"
+  },
+  "homepage": "https://github.com/kavigithub/React-Assignment-Proj#readme",
+  "devDependencies": {
+    "parcel": "^2.8.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
