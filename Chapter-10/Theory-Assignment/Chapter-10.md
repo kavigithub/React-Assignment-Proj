@@ -1,10 +1,12 @@
 #  Explore all the ways of writing css.
+```python
 Native CSS - all components's styles in a single file index.css
 SCSS - Syntactical CSS - it is then converted to css
 Inline - style attribute - pass object - {{backgroundColor : "red"}}
 Component Library - MaterialUI, Bootstrap, Base Web UI, Ant design, chakra UI
 Styled Components
 CSS Framework - Tailwind
+```
 
 # 2. How do we configure tailwind?
 ## Tailwind CLI tool : Install Tailwind CSS
@@ -47,7 +49,7 @@ module.exports = {
 
 # 3. In tailwind.config.js, what does all the keys mean (content, theme, extend, plugins)?
 ## Content
-    The content section of your tailwind.config.js file is where you configure the paths to all of your HTML templates, JavaScript components, and any other source files that contain Tailwind class names.
+The content section of your tailwind.config.js file is where you configure the paths to all of your HTML templates, JavaScript components, and any other source files that contain Tailwind class names.
     Eg: tailwind.config.js
 ```python
 module.exports = {
