@@ -94,3 +94,10 @@ A client-side route happens when the route is handled internally by the JavaScri
 It is important to note that the whole page won’t refresh when using client-side routing. There are just some elements inside the application that will change.
 
 ref link: https://medium.com/@wilbo/server-side-vs-client-side-routing-71d710e9227f
+
+# Ref Links
+<ul>
+	<li>React Router DOM - <a href="https://reactrouter.com/en/main" target="_blank">https://reactrouter.com/en/main</a></li>
+	<li>Client Side Routing - <a href="https://reactrouter.com/en/main/start/overview" target="_blank">https://reactrouter.com/en/main/start/overview</a></li>
+	<li>Formik - <a href="https://formik.org/" target="_blank">https://formik.org/</a></li>
+</ul>
