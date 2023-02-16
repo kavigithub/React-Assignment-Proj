@@ -1,0 +1,33 @@
+{
+  "name": "coding-assignment-11",
+  "version": "1.0.0",
+  "description": "'Data is the oil'",
+  "dependencies": {
+    "@parcel/bundler-default": "^2.8.3",
+    "@parcel/transformer-js": "^2.8.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.2.6",
+    "postcss": "^8.4.21"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavigithub/React-Assignment-Proj.git"
+  },
+  "author": "Kavita ghatge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kavigithub/React-Assignment-Proj/issues"
+  },
+  "homepage": "https://github.com/kavigithub/React-Assignment-Proj#readme"
+}
