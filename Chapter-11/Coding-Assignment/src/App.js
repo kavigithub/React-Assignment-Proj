@@ -57,7 +57,6 @@ const AppLayout = () => {
         setUser: setUser
       }}>  
         <Header/>
-        {/* <Body /> */}
         <Outlet />
         <Footer />
       </UserContext.Provider>   

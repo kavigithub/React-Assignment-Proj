@@ -14,18 +14,33 @@ With the help of CreateContext() we create context and to use this context in re
 **State and Props** --> are tide to component
 **Context** --> r maintain seperate from comp. It is not specific to any comp. Assume context is 'useState' for your whole app
 
-**Context Provider** is used to provide access to a context between multiple components of the application. We can provide the access to the context or the data layer to the whole application to the and its subcomponents.
+**Context Provider** will overwrite the value with dynamic data, provider is used to provide access to a context between multiple components of the application. We can provide the access to the context or the data layer to the whole application to the and its subcomponents.
 
-For example:
+For example: plz check UserContext.js in utils folder to check how to createContext , and SearchFood RestaurentCard ...to consume or use context in functional comp
 
 ```python
-return (
-  <UserContext.Provider value={{ user: user, setUser: setUser }}>
-    <Head />
-    <Outlet />
-    <Footer />
-  </UserContext.Provider>
-)
+ const [user, setUser] = useState({
+    name: 'Kavita Ghatge',
+    email: 'support@namastedev.com'
+   });
+
+   useEffect(() => {
+      //authenticate user
+
+      //set the above mentioned user
+   }, [])
+
+    return (
+        //react.fregment...
+      <UserContext.Provider value={{
+        newUser: user,
+        setUser: setUser
+      }}>  
+        <Header/>
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>   
+    )
 ```
 In the code above , we are providing the access of UserContext to <Head /> <Outlet /> and <Footer /> component
 
@@ -36,7 +51,7 @@ For example:
 In Class based components, we can use the Context and use the consumer.
 ```python
 <UserContext.Consumer>
-  {({ user }) => <h1>{user.name}</h1>}
+  {({ userNew }) => <h1>{userNew.name}</h1>}
 </UserContext.Consumer>
 ```
 In Functional components we can use useContext hook to consume the context.
@@ -45,10 +60,14 @@ In Functional components we can use useContext hook to consume the context.
 import UserContext from "../utils/UserContext";
 import { useContext } from "react";
 
-const { user } = useContext(UserContext);
+const { userNew } = useContext(UserContext);
+
+//jsx
+ <li className="p-2 text-white">{isOnline ? (`Welcome, ${newUser.name}`) : 'Sleepy User'}</li>
 
 ```
 # If you don't pass a value to the provider does it take the default value?
+Yes, Whatever you mentioned the default value while creating context, will apply as default value.
 If we do not override the values of context it takes the default values form the context , when we initialise the context.
 
 
