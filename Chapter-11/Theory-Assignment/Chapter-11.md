@@ -1,5 +1,7 @@
-# What is Prop Drilling?
-Ans: If you have data in Parent compoent and you want to access it into your child component or in your grand child component, then you need to pass it as props to your child component and that will pass to its child comp (passing data frim 5 to 10 comp below layer is not good way to handle data) and so on...the chaining of passing props from parent to child, from child to its child is called Props Drilling. To Handle this you can create custome hook or u can create context and useContext hook. Please check  Header.js
+# What is Props Drilling?
+Ans: Prop drilling is the act of passing props through multiple layers of components.
+ If you have data in Parent compoent and you want to access it into your child component or in your grand child component, then you need to pass it as props to your child component and that will pass to its child comp (passing data frim 5 to 10 comp below layer is not good way to handle data) and so on...the chaining of passing props from parent to child, from child to its child is called Props Drilling. To Handle this you can create custome hook or u can create context and useContext hook. Please check  Header.js
+Ref Link: https://www.educative.io/answers/what-is-prop-drilling-in-react
 
 # What is Lifting the State Up?
 Ans. Insted of child comp. control all the state by itself, let parent will control all state.
@@ -19,6 +21,7 @@ With the help of CreateContext() we create context and to use this context in re
 For example: plz check UserContext.js in utils folder to check how to createContext , and SearchFood RestaurentCard ...to consume or use context in functional comp
 
 ```python
+import UserContext from "./utils/UserContext";
  const [user, setUser] = useState({
     name: 'Kavita Ghatge',
     email: 'support@namastedev.com'
@@ -60,7 +63,7 @@ In Functional components we can use useContext hook to consume the context.
 import UserContext from "../utils/UserContext";
 import { useContext } from "react";
 
-const { userNew } = useContext(UserContext);
+const { userNew } = useContext(UserContext); //you need to extract user so we used {}
 
 //jsx
  <li className="p-2 text-white">{isOnline ? (`Welcome, ${newUser.name}`) : 'Sleepy User'}</li>
@@ -73,3 +76,6 @@ If we do not override the values of context it takes the default values form the
 
 
 **One line about this chapter : If you want to : 1) pass props from parent to child, grandchild(2 levels), use Props Drilling, 2) pass props from child to parent or its siblings use Lifting State Up and 3) make data available throughout the app, then use Context Provider**
+
+# Ref LInk:
+https://felixgerschau.com/react-component-composition/#:~:text=Conclusion-,What%20is%20component%20composition%20in%20React%3F,new%20components%20with%20other%20components.

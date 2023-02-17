@@ -80,9 +80,35 @@ return (
 
 One can always directly manipulate the DOM and increment the counter on-screen as well, but then there is no point in using react.
 
+# Stateful vs. Stateless Components
+Components in React can be stateful or stateless.
+
+A stateful component declares and manages local state in it.
+A stateless component is a pure function that doesn't have a local state and side-effects to manage.
+A pure function is a function without any side-effects. This means that a function always returns the same output for the same input.
+
+If we take out the stateful and side-effects logic from a functional component, we have a stateless component. Also, the stateful and side-effects logic can be reusable elsewhere in the app. So it makes sense to isolate them from a component as much as possible.
+
+what is this stateful logic? It can be anything that needs to declare and manage a state variable locally.
+
+For example, the logic to fetch data and manage the data in a local variable is stateful. We may also want to reuse the fetching logic in multiple components.
+
+React provides a bunch of standard in-built hooks:
+
+useState: To manage states. Returns a stateful value and an updater function to update it.
+useEffect: To manage side-effects like API calls, subscriptions, timers, mutations, and more.
+useContext: To return the current value for a context.
+useReducer: A useState alternative to help with complex state management.
+useCallback: It returns a memorized version of a callback to help a child component not re-render unnecessarily.
+useMemo: It returns a memoized value that helps in performance optimizations.
+useRef: It returns a ref object with a .current property. The ref object is mutable. It is mainly used to access a child component imperatively.
+useLayoutEffect: It fires at the end of all DOM mutations. It's best to use useEffect as much as possible over this one as the useLayoutEffect fires synchronously.
+useDebugValue: Helps to display a label in React DevTools for custom hooks.
+
 # RefLinks
 <ul>
 <li>https://reactjs.org/docs/hooks-state.html</li>
 <li>https://www.w3schools.com/react/react_usestate.asp#:~:text=The%20useState%20Hook%20can%20be,Hooks%20to%20track%20individual%20values.</li>
 <li>Code Link - https://bitbucket.org/namastedev/namaste-react-live/src/master/</li>
+<li>https://www.freecodecamp.org/news/react-hooks-fundamentals/#:~:text=React%20Hooks%20are%20simple%20JavaScript,updater%20function%20to%20update%20it.</li>
 </ul>
