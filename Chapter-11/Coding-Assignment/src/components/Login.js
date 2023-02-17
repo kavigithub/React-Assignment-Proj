@@ -1,11 +1,31 @@
 // Render Prop
-import React ,{ useContext } from 'react';
+import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { Link } from 'react-router-dom';
-import UserContext from '../utils/UserContext';
+import { Link, Navigate } from 'react-router-dom';
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 const Login = () => {
-    const {newUser} = useContext(UserContext) 
+    const {newUser, setUser} = useContext(UserContext);
+
+    const loginNewUser = (values) => {
+        let response = {};
+        let userEmail = values.email;
+
+        if(true) {
+            response = {
+                name: userEmail.substring(0, userEmail.indexOf('@')),
+                email: userEmail,
+                isAuthenticated: true
+            }
+        } else {
+            response = {
+                isAuthenticated: false
+            }
+        }
+
+        return response;
+    }
 
   return (
     <>
@@ -31,19 +51,22 @@ const Login = () => {
         return errors;
       }}
 
-      onSubmit={(values, { setSubmitting, resetForm }) => {
+      onSubmit={ async (values, { setSubmitting, resetForm }) => {
         console.log(values.userName, 'form value');
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-          resetForm({
-            values: ''
-          })
-        }, 400);
+       //setTimeout(() => {
+           //alert(JSON.stringify(values, null, 2)); 
+           let response = await loginNewUser(values);
+           console.log('values submit', response);
+           //setUser(JSON.stringify(values.userName));
+           setUser(response)
+           setSubmitting(false);
+           resetForm({
+              values: ''
+           })
+       // }, 1000)
       }}
-
-     
     >
+    
       {({ isSubmitting }) => (
         <Form className='flex flex-col w-3/6'>
         {/* //Field as Input..name should be same with the initial val eg  name="email" look initialValues */}
@@ -61,13 +84,15 @@ const Login = () => {
         </Form>
       )}
     </Formik>
+ 
+        { newUser.isAuthenticated  && <Navigate to="/" replace={true} />}
 
-    <p className='flex justify-center'>OR</p>
+        <p className='flex justify-center'>OR</p>
 
        <button className="justify-center border border-transparent bg-lime-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-lime-700 focus:outline-none focus:ring-2 focus:ring-lime-500 my-2">
        <Link  to='/signup'>Go to Sign Up</Link> 
         </button>
-  </div>
+    </div>
     </>
   )
   

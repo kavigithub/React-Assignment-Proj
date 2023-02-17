@@ -42,8 +42,9 @@ const InstaMart = lazy(() => import("./components/InstaMart"));
 
 const AppLayout = () => {
    const [user, setUser] = useState({
-    name: 'Kavita Ghatge',
-    email: 'support@namastedev.com'
+    name: '',
+    email: '',
+    isAuthenticated: false
    });
 
    useEffect(() => {
