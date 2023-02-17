@@ -39,11 +39,13 @@ const Header = () => {
                 </li>
                 <li className="p-2"><img src={cartIcon} alt="cart" style={{width:30}}/></li>
                 <li className="p-2">
+                    <Link to='/login'>
                     {
                         isLogged ?  
                        ( <button className='log-btn text-white flex' onClick={() => setIsLogged(false)}>Logout <img src={userLogout} alt="logout" style={{width:30, padding:'0px 5px'}}/></button>) : 
                        ( <button className='log-btn text-white flex' onClick={() =>  setIsLogged(true)}>Login <img src={userLogin} alt="logout" style={{width:30, padding:'0px 5px'}}/></button>)
                     }
+                    </Link>
                 </li>
                 <li className="p-2 text-white">{isOnline ? (`Welcome, ${newUser.name}`) : 'Sleepy User'}</li>
             </ul>

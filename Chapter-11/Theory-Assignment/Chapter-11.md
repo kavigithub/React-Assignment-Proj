@@ -71,6 +71,7 @@ const { userNew } = useContext(UserContext); //you need to extract user so we us
 ```
 # If you don't pass a value to the provider does it take the default value?
 Yes, Whatever you mentioned the default value while creating context, will apply as default value.
+
 If we do not override the values of context it takes the default values form the context , when we initialise the context.
 
 

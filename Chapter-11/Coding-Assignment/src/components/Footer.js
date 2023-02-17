@@ -1,7 +1,7 @@
 const Footer = () => {
     return(
         <>
-            <footer className=" bg-lime-800 mt-5 p-5 flex justify-between items-center text-white">
+            <footer className=" w-full bg-lime-800 mt-5 p-5 flex justify-between items-center text-white fixed bottom-0">
 
                 <span>© 2022 Company, Inc</span>
 

@@ -9,9 +9,11 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurantDetails from "./components/RestaurantDetails";
 import Profile from "./components/Profile";
+import Login from './components/Login';
 import { FoodItemSkeleton } from "./components/FoodItemSkeleton";
 import UserContext from "./utils/UserContext";
 import {createBrowserRouter, RouterProvider, Outlet} from 'react-router-dom'; //library for Router
+import Signup from "./components/Signup";
 
 // comment 
 // Ctrl + K, then press Ctrl + C if you’re using Windows || Ctrl + / 
@@ -57,7 +59,10 @@ const AppLayout = () => {
         setUser: setUser
       }}>  
         <Header/>
-        <Outlet />
+        {/* <Body /> */}
+        <div className="overflow-auto mb-20">
+          <Outlet/>
+        </div>
         <Footer />
       </UserContext.Provider>   
     )
@@ -100,8 +105,16 @@ const appRouter = createBrowserRouter([
         )
       },
       {
+        path : '/login',
+        element: <Login />
+      },
+      {
         path: '/restaurant/:id', //for dynamic id
         element: <RestaurantDetails />
+      },
+      {
+        path: '/signup',
+        element: <Signup />
       }
     ]
   },

@@ -32,7 +32,8 @@ const Body = ({user}) => {
                 (filterRestaurentList.length === 0) ? 
                 <h1 style={{paddingLeft:'20px'}}> No Restaurent match your Filter Criteria</h1> :
                 filterRestaurentList.map((restaurant) => {
-                  return <Link className='md:w-1/4 sm:w-6/12' style={{textDecoration: 'none'}} to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}> <RestaurentCard {...restaurant.data} user={user}/></Link> 
+                  return <Link className='md:w-1/4 sm:w-6/12' style={{textDecoration: 'none'}} to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}> 
+                  <RestaurentCard {...restaurant.data} user={user}/></Link> 
                 }) 
             }
         </section>
