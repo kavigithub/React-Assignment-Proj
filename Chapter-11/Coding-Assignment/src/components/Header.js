@@ -13,7 +13,7 @@ const Header = () => {
 
     const isOnline = useOnline();
 
-    const {newUser} = useContext(UserContext) //you need to extract user so we used {}
+    let {newUser, setUser} = useContext(UserContext) //you need to extract user so we used {}
 
     return(
         <header className="flex justify-between p-2 bg-lime-800 items-center">
@@ -47,7 +47,8 @@ const Header = () => {
                     }
                     </Link>
                 </li>
-                <li className="p-2 text-white">{isOnline ? (`Welcome, ${newUser.name}`) : 'Sleepy User'}</li>
+                {/* <li className="p-2 text-white">{isOnline ? (`Welcome, ${newUser.name}`) : 'Sleepy User'}</li> */}
+                <li className="p-2 text-white">{isLogged && isOnline ? (`Welcome ${newUser.name}`) : 'Sleepy User'}</li>
             </ul>
             </div>
         </header>
