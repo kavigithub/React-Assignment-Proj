@@ -1,0 +1,39 @@
+{
+  "name": "coding-assignment-12",
+  "version": "1.0.0",
+  "description": "Let's build our store",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kavigithub/React-Assignment-Proj.git"
+  },
+  "author": "Kavita Ghatge",
+  "dependencies": {
+    "@parcel/bundler-default": "^2.8.2",
+    "@parcel/transformer-js": "^2.8.2",
+    "@reduxjs/toolkit": "^1.9.3",
+    "formik": "^2.2.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.7.0",
+    "redux": "^4.2.1",
+    "yup": "^1.0.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.2",
+    "postcss": "^8.4.21",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.2.4"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kavigithub/React-Assignment-Proj/issues"
+  },
+  "homepage": "https://github.com/kavigithub/React-Assignment-Proj#readme",
+  "main": "tailwind.config.js"
+}
