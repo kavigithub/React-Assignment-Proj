@@ -2,41 +2,50 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const cartSlice = createSlice({
     name: 'cart',
-    initialState : { //initial value of the cart when u initialise
+    initialState: { //initial value of the cart when u initialise
         items: []
     },
-   reducers: { //reduce call when discpatch an action
-        //what action inside my cart? addItem
-        //this is the place where i tell, what action will call what reducer function
-        //reducer contains mapping between action and reducer function
+    reducers: {
+        addItem: (state, action) => {
+            /*  console.log(state.items, 'state');
+             console.log(action.payload, 'action');
+             state.items.push(action.payload);
+            */
 
-        // () => {} : this is reducer function
-        //addItem : is the action, when that reducer function is called 
-       
-        //how to modify store ...modify state
-        //reducer function takes 2 arg state and action
-        //state is current value
-        //action.payload, this is the place where will get the items to add in cart ..data which is comming in
-        addItem : (state, action) => {
-            state.items.push(action.payload);
-            //don't return anything 
-            //this reducer function take state and directly modify it
+            const doesItemExist = state.items.find((item) => item.id === action.payload.id);
+            if (doesItemExist) {
+                state.items.forEach(item => {
+                    if (item.id === action.payload.id) {
+                        item = { ...item, count: item.count++ }
+                    }
+                })
+            } else {
+                state.items.push({ ...action.payload, count: 1 })
+            }
         },
         removeItem: (state, action) => {
             console.log(state.items, 'state.items')
             console.log(action.payload, 'action.payload')
-            const index =  state.items.indexOf(action.payload);
-            if (index) {
-                state.items.splice(index, 1);
-            }       
+            const doesItemExist = state.items.find((item) => item.id === action.payload);
+            if(doesItemExist && doesItemExist.count > 1) {
+                state.items.forEach(item => {
+                    if (item.id === action.payload) {
+                        item = { ...item, count: item.count-- }
+                    }
+                })
+            } else {
+                const filteredItems = state.items.filter(item => item.id !== action.payload);
+                return {...state, items: filteredItems}; 
+            }
         },
         clearCart: (state) => {
             state.items = [];
+            state.cartTotalQuantity = 0;
         }
-   }
-    
+    }
+
 });
 
-export const {addItem, removeItem, clearCart} = cartSlice.actions; //actions are exported by name
+export const { addItem, removeItem, clearCart } = cartSlice.actions; //actions are exported by name
 
 export default cartSlice.reducer; //reducer are exported by default

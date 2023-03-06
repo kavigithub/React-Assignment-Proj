@@ -3,7 +3,7 @@ const Footer = () => {
         <>
             <footer className=" w-full bg-lime-800 mt-5 p-5 flex justify-between items-center text-white fixed bottom-0">
 
-                <span>© 2023 Company, Inc</span>
+                <span>© 2023 Company, Designed By : KAvita Ghatge</span>
 
                 <ul className="flex justify-end">
                     <li className="px-2"><a href="https://www.facebook.com/swiggy.in" rel="nofollow noopener" alt="facebook" target="_blank"><img width="24" height="24" alt="" src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-facebook_tfqsuc" /></a></li>

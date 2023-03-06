@@ -17,7 +17,8 @@ const Header = () => {
     const {newUser, setUser} = useContext(UserContext) //you need to extract user so we used {}
 
     const cartItems = useSelector((store) => store.cart.items);
-    console.log(cartItems);
+   
+  /*   console.log(cartItems); */
 
     return(
         <header className="flex justify-between p-2 bg-lime-800 items-center">
